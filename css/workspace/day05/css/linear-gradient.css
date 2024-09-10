@@ -1,0 +1,26 @@
+.gradient {
+    width: 200px;
+    height: 200px;
+    /* 방향, 첫번째껄러, 두번째컬러 */
+    /* 
+        방향
+        1) to right, left, top, bottom
+        2) 0~360 deg
+        3) 0~1 turn
+     */
+    /* background: linear-gradient(45deg, pink, violet, red); */
+    /* background: linear-gradient(
+        to right bottom,
+        pink 10%,
+        violet 10% 70%,
+        plum 70% 100%
+    ); */
+    background: linear-gradient(
+        to right,
+        red 20%,
+        orange 20% 40%,
+        yellow 40% 60%,
+        green 60% 80%,
+        blue 80% 100%
+    );
+}

@@ -1,0 +1,48 @@
+/* 템플릿 */
+/* 
+@media (타입) and (조건) {
+    스타일
+} 
+    1) 미디어 타입의 종류
+    all, braille, embossed, handeld, print, projection, screen, speech, tty, ty
+
+    2) 조건
+    and, or, not
+
+    3) type
+    mobile : 345px ~ 767px
+    tablet : 768px ~ 1279px
+    desktop : 1280px ~
+*/
+
+#ham {
+    width: 200px;
+    animation: move 2s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(400px, 0);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 400px);
+    }
+}
+
+
+/* 화면이 500보다 작아지면 */
+@media screen and ( min-width:0 ) and ( max-width:800px ) {
+    #ham {
+        width: 200px;
+        animation: move2 2s infinite;
+    }
+}

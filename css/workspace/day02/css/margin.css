@@ -1,0 +1,20 @@
+#div1 {
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  border: solid 1px orange;
+}
+
+#div2 {
+  width: 100px;
+  height: 100px;
+  margin-top: 60px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  border: solid 1px orange;
+}
+

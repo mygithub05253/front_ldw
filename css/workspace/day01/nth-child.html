@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>형제 요소 선택자</title>
+  <style>
+    /* ul#ul-tag li:nth-child(4){
+      color: purple;
+    }
+    ul#ul-tag li:nth-child(6) {
+      font-size: 30px;;
+    }
+    #ul-tag li:first-child {
+      color: blue;
+    }
+    #ul-tag li:last-child {
+      color: red;
+    } */
+    /* #ul-tag li:nth-child(n + 4) {
+      color: red;
+    } */
+    /* #ul-tag li:nth-child(2n) {
+      color: blue;
+    } */
+    #ul-tag li:nth-child(-n + 2) {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <ul id="ul-tag">
+    <li>1번 first-child</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4번 컬러</li>
+    <li>5</li>
+    <li>6번 폰트사이즈</li>
+    <li>7</li>
+    <li>8번 last-child</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./market-kurly.css">
+    <title>회원가입 - 컬리</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <br><br><br><br>
+    <p>*필수입력사항</p>
+    <hr>
+    <div id="box">
+        <div class="container">
+            <div class="user">아이디*</div>
+            <div class="input_box"><input type="id" placeholder="아이디를 입력해주세요" class="input"></div>
+            <button type="button" class="button">중복확인</button>
+        </div>
+
+        <div class="container">
+            <div class="user">비밀번호*</div>
+            <div class="input_box"><input type="password" placeholder="비밀번호를 입력해주세요" class="input"></div>
+        </div>
+
+        <div class="container">
+            <div class="user">비밀번호확인*</div>
+            <div class="input_box"><input type="pass" placeholder="비밀번호를 한번 더 입력해주세요" class="input"></div>
+        </div>
+
+        <div class="container">
+            <div class="user">이름*</div>
+            <div class="input_box"><input type="text" placeholder="이름을 입력해주세요" class="input"></div>
+        </div>
+
+        <div class="container">
+            <div class="user">이메일*</div>
+            <div class="input_box"><input type="email" placeholder="예: marketkurly@kurly.com" class="input"></div>
+            <button type="button" class="button">중복확인</button>
+        </div>
+
+        <div class="container">
+            <div class="user">휴대폰*</div>
+            <div class="input_box"><input type="id" placeholder="숫자만 입력해주세요." class="input"></div>
+            <button type="button" class="num">인증번호 받기</button>
+        </div>
+
+        <div class="container">
+            <div class="user">주소*</div>
+            <div class="input_box">
+                <div id="address">
+                    주소 검색
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="user"></div>
+            <div class="input_box">
+                <div id="inf">
+                    배송지에 따라 상품 정보가 달라질 수 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="user">성별</div>
+            <div class="input_box">
+                <label class="radio_box">
+                    <input type="radio" name="gender" value="mele">남자
+                </label>
+                <label class="radio_box">
+                    <input type="radio" name="gender" value="female">여자
+                </label>
+                <label class="radio_box">
+                    <input type="radio" name="gender" value="no">선택안함
+                </label>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="user">생년월일</div>
+            <div class="input_box"><input type="date" class="input"></div>
+            
+        </div>
+
+        <div class="container">
+            <div class="user">추가입력 사항</div>
+            <div class="input_box">
+                <label class="radio_box">
+                    <input type="radio" name="add" value="1">친구초대 추천인 아이디
+                </label>
+                <label class="radio_box">
+                    <input type="radio" name="add" value="2">참여 이벤트명
+                </label>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="user"></div>
+            <div class="input_box"><input type="text" placeholder="참여 이벤트명을 입력해 주세요." class="input"></div>
+        </div>
+
+        <div class="container">
+            <div class="user"></div>
+            <div class="input_box">
+                <div id="inf">
+                    추천인 아이디와 참여 이벤트명 중 하나만 선택 가능합니다.<br>가입 이후는 수정이 불가능 합니다.<br>대소문자 및 띄어쓰기에 유의해주세요.
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <div class="user">이용약관동의*</div>
+            <div class="check_box">
+                <label class="check">
+                    <input type="checkbox" name="check" value="1" id="all">전체 동의합니다.
+                </label>
+                <label class="check">
+                    <input type="checkbox" name="gender" value="female">이용약관 동의
+                </label>
+                <label class="check">
+                    <input type="checkbox" name="gender" value="no">개인정보 수집.이용 동의
+                </label>
+            </div>
+        </div>
+
+        <hr>
+    </div>
+    <br><br>
+    
+    <div id="sign">
+        <button type="submit" class="line">가입하기</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nth-child 실습</title>
+  <!-- 
+    3, 6번 자식 요소 color : blue
+    2번 자식 요소 폰트 사이즈 : 30px
+    5번 요소 color : orange
+  -->
+
+  <style>
+    /* li:nth-child(3n)으로 해도 상관없음 */
+    #ul-tag li:nth-child(3), li:nth-child(6) {
+      color: blue;
+    }
+    #ul-tag li:nth-child(2) {
+      font-size: 30px;
+    }
+    #ul-tag li:nth-child(5) {
+      color: orange;
+    }
+    /* 짝수만 변경하고 싶을 때는 even, 홀수만 변경하고 싶을 때는 odd 사용 가능 */
+  </style>
+</head>
+<body>
+  <ul id="ul-tag">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+</body>
+</html>

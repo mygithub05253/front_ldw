@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상 클래스 선택자(:)</title>
+  <style>
+    /* 
+      a 태그 가상 클래스 선택자(:)
+      1. :link => 방문한 적 없는 링크
+      2. :visited => 방문한 적 있는 링크
+      3. :hover => 마우스를 올렸을 때
+      4. :active => 마우스를 클릭했을 때
+    */
+    a:link {
+      color: red;
+    }
+    a:visited {
+      color: green;
+    }
+    a:hover {
+      color: black;
+    }
+    a:active {
+      color: blue;
+    }
+
+    /* 
+      가상 요소 선택자(::)
+      1. ::before => 요소 앞에 등장하는 가상 요소
+      2. ::after => 요소 뒤에 등장하는 가상 요소
+    */
+    
+    #container::after {
+      content: "내용 추가";
+      width: 30px;
+      height: 30px;
+      background-color: brown;
+    }
+  </style>
+</head>
+<body>
+  <a href="##">방문한 적이 없는 a 태그</a>
+  <a href="###">방문한 적이 있는 a 태그</a>
+
+  <div id="container">
+    가상 요소 컨테이너
+  </div>
+</body>
+</html>

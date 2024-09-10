@@ -1,0 +1,31 @@
+/*  cascading */
+#banana {
+  color: red !important;
+}
+
+/* 상속 */
+#container strong {
+  color: red;
+}
+
+#wrap {
+  /* color: aqua; */
+  border: 2px dotted orange;
+}
+
+#wrap p {
+  border: inherit;
+}
+
+/* 컬러 */
+#color1 {
+  /* 16진수 표현법으로 cyan 컬러 표현 */
+  color: #00FFFF;
+}
+
+#rgb-color {
+  /* rgb 컬러로 yellow 컬러 표현 */
+  /* color: rgb(255, 255, 0); */
+  /* alpha : 0 ~ 1 */
+  color: rgba(255, 255, 0, 1);
+}

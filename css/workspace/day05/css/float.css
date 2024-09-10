@@ -1,0 +1,8 @@
+.float img{
+    float: left;
+    width: 400px;
+}
+
+.float .text-last {
+    clear: both;
+}

@@ -1,0 +1,52 @@
+/* 1초마다 반짝이는 별 만들기 */
+/* 글자가 아래서 위로 올라와서 멈추는 효과 */
+
+/* 요소가 한바퀴 돌아서 반대로 다시 돌아오는 효과 만들기 */
+
+#star {
+    animation: twinkle 1s infinite;
+}
+
+#text {
+    animation: movetext 1s forwards;
+}
+
+#rotate {
+    width: 400px;
+    animation: ham 4s infinite;
+}
+
+@keyframes twinkle{ 
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes movetext {
+    from {
+        transform: translate(0, 40px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes ham {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

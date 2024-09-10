@@ -1,0 +1,17 @@
+#icon {
+    animation: move 3s forwards;
+}
+
+/* 키프레임 */
+@keyframes move {
+    /* 프레임 */
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(500px, 0);
+    }
+    100% {
+        transform: translate(500px, 500px);
+    }
+}

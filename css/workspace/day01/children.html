@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자식 자손 선택자</title>
+  <style>
+    /* p > span {
+      color: blue;
+    } */
+    /* p span {
+      color: red;
+    } */
+    #container span {
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+  <!-- 자식 자손 선택자 -->
+  <!-- <p>
+    부모 p 태그 내용
+    <span>자식 선택자
+      <span>자손 선택자</span>
+    </span>
+    <div>
+      자식 선택자
+      <span>자손 선택자</span>
+    </div>
+  </p> -->
+
+  <div id="container">
+    조상 div 태그
+    <span>부모 span 태그</span>
+    <p>부모 p 태그
+      <span>자손 span 태그</span>
+      <a href="#">자손 a 태그</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet">
+  <title>폰트 패밀리</title>
+  <style>
+    /* .font-task {
+      font-family: "Gasoek One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    } */
+
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .font-task {
+      font-family: 'Pretendard-Regular', sans-serif;
+    }
+
+    /* html의 크기를 기준(rem) */
+    /* h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+    span {
+      font-size: 2rem;
+    } */
+
+    /* 부모의 크기를 기준(em) */
+    h1 { font-size: 10px; }
+    p { font-size: 2em; }
+    span { font-size: 2em; }
+  </style>
+</head>
+<body>
+  <!-- 폰트 패밀리 -->
+  <!-- <h1 class="font-task">안녕하세요. 글꼴 테스트입니다.😎</h1>
+  <h3 class="font-task">사랑합니다. 그냥 다요.😘</h3> -->
+
+  <!-- 폰트 사이즈 -->
+  <h1> 조상 em 
+    <p> 부모 em 
+      <span> 자식 em </span>
+    </p>
+  </h1>
+
+</body>
+</html>

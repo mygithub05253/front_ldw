@@ -1,0 +1,131 @@
+* { 
+    margin: 0 30px;
+}
+
+h1 { 
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+p{
+    text-align: end;
+    margin-bottom: 5px;
+}
+
+#box {
+    display: flex;
+    flex-direction: column;
+}
+
+.user {
+    box-sizing: border-box;
+    width: 150px;
+    height: 50px;
+    text-align: left;
+    padding: 14px;
+}
+
+.container{
+    width: 1000px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.button{
+    box-sizing: border-box;
+    width: 160px;
+    height: 55px;
+    background-color: white;
+    border: solid 1.9px rgb(92, 19, 141);
+    color: rgb(92, 19, 141);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-left: -30px;
+}
+
+.num{
+    box-sizing: border-box;
+    width: 160px;
+    height: 55px;
+    background-color: white;
+    border: solid 1.9px rgb(207, 207, 207);
+    color: rgb(207, 207, 207);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-left: -30px;
+}
+
+.input_box {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    height: 60px;
+}
+
+.input {
+    box-sizing: border-box;
+    padding: 0 11px 1px 15px;
+    width: 450px;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: solid 2px rgb(207, 207, 207);
+    font-weight: 500;
+}
+
+#address {
+    box-sizing: border-box;
+    padding:16px 11px 11px 15px;
+    width: 450px;
+    height: 60px;
+    font-size: 16px;
+    border: solid 1.9px rgb(92, 19, 141);
+    border-radius: 5px;
+    color: rgb(92, 19, 141);
+    font-weight: 1000;
+    text-align: center;
+}
+
+#inf {
+    font-size: 12px;
+    color: rgb(121, 121, 121);
+    margin-top: -7px;
+}
+
+.radio_box{
+
+    margin: -5px;
+    margin-top: 15px;
+}
+
+.check_box {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 600px;
+}
+
+.check {
+    display: flex;
+    flex-direction: row;
+}
+
+#sign {
+    text-align: center;
+}
+
+.line{
+    background-color:  rgb(92, 19, 141);
+    width: 250px;
+    height: 60px;
+    color: white;
+    border-radius: 3px;
+    border: solid 0;
+    font-size: 16px;
+    font-weight: 600;
+    
+}

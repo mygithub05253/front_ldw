@@ -1,0 +1,31 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 4px;
+}
+
+#container header {
+    background-color: red;
+    /* span : 몇칸 차지해라 */
+    grid-column: 1/ span 4;
+}
+
+#container section {
+    background-color: green;
+    /* 열 1부터 2칸 */
+    /* 행 2부터 2칸 */
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+}
+
+#container article {
+    background-color: blue;
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 2;
+}
+
+#container footer {
+    background-color: yellow;
+    grid-column: 1 / span 4;
+}

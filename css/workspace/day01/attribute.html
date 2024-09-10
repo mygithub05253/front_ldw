@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자</title>
+  <style>
+    input[name="id"] { background-color: red; }
+    /* input[placeholder="비밀번호를 입력하세요"] { background-color: blue; } */
+    input[placeholder="비밀번호를 입력하세요"] { background-color: blue; }
+    input[type="text"] { background-color: green; }
+    input[type="text"] { background-color: yellow; }
+    input[type="text"] { background-color: red; }
+  </style>
+</head>
+<body>
+  <input type="text" >
+  <input name="id" type="text" >
+  <input placeholder="비밀번호를 입력하세요" type="text" >
+</body>
+</html>

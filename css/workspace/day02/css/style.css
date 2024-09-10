@@ -1,0 +1,26 @@
+#fonts{
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  width: 300px;
+}
+
+.title {
+  font-size: 3em;
+}
+
+.sub {
+  color: rgba(0, 0, 255, 0.5);
+  white-space: nowrap;
+  letter-spacing: -0.5px;
+} */
+
+/* a 태그의 밑줄 삭제 */
+a {
+  text-decoration: none;
+}
+
+/* li 태그의 기본 스타일 삭제 */
+li {
+  list-style: none;
+}
