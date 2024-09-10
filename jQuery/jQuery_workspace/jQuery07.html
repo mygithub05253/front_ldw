@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 이벤트 효과</title>
+</head>
+<body>
+  <ul>
+    <li>C언어</li>
+    <li>Python</li>
+    <li>JAVA</li>
+  </ul>
+  <button>버튼</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  const $button = $("button");
+  const $ul = $("ul");
+
+  $button.on("click", (e) => {
+    // $ul.hide();
+    // $ul.show();
+    // $ul.toggle();
+    // $ul.fadeOut(3000);
+    // $ul.fadeIn();
+    // $ul.slideUp();
+    // $ul.slideDown();
+    $ul.slideToggle(2000);
+  })
+</script>
+</html>

@@ -1,0 +1,9 @@
+jQuery 추가 문법
+1) .hide() : 숨기기
+2) .show() : 보이기
+3) .toggle() : hide랑 show 합쳐놓은 것
+4) .fadeOut(밀리터리second) : 서서히 사라지도록 하기
+5) .fadeIn() : 서서히 보이도록 하기
+6) .slideUp() : 위로 올려버리기
+7) .slideDown() : 아래로 내려버리기
+8) .slideToggle() : slideIp이랑 slideDown을 합쳐놓은 것

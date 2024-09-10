@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 실습</title>
+</head>
+<body>
+  <div>
+    <label for=""><input type="checkbox" value="선택1">선택1</label>
+    <label for=""><input type="checkbox" value="선택2">선택2</label>
+    <label for=""><input type="checkbox" value="선택3">선택3</label>
+  </div>
+  <div>
+    <p id="result"></p>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // 체크박스 선택 시 해당 내용을 p 태그에 이어붙이기
+  // 선택 해제 시 해당 내용 제거
+  /* const $inputs = $("input[type=checkbox]");
+  const $p = $("#result");
+
+  $inputs.on("click", (e) => {
+    if(e.target.checked === true) {
+      $p.text($p.text() + " " + e.target.value);
+    } else {
+      $p.text($p.text().replace(e.target.value, ""));
+    }
+  }) */
+
+  // solution
+  // checkbox랑 p 태그 가져오기
+  const $checkboxes = $("input[type=checkbox]");
+  const $result = $("#result");
+
+  $checkboxes.on("click", (e) => {
+    if(e.target.checked) {
+      $result.append(`<strong>${e.target.value}</strong>`);
+    } else {
+      const $strong = $("#result strong");
+      $strong.filter((i, strong) => strong.innerText === e.target.value).remove();
+    }
+  })
+
+</script>
+</html>

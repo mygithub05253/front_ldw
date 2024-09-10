@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 이벤트</title>
+</head>
+<body>
+  <div id="wrap"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  /* setTimeout(() => {
+    console.log("나와줘")
+  }, 1000); */
+
+  const id = setInterval(() => {
+    $("#wrap").append("<strong>나 등장</strong>");
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(id);
+  }, 5000);
+
+
+</script>
+</html>

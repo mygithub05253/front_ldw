@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 기초</title>
+</head>
+<body>
+  <!-- <div class="box" style="width: 100px; height: 100px; background: orange;"></div>
+  <button>display 숨기기!</button> -->
+
+  <form action="" name="myForm">
+    <div>
+        <label>
+            전체 동의
+            <input type="checkbox" name="term1" class="all">
+        </label>
+    </div>
+    <div>
+        <label>
+            서비스 이용약관 동의
+            <input type="checkbox" name="term1" class="term">
+        </label>
+    </div>
+    <div>
+        <label>
+            광고 수신 동의
+            <input type="checkbox" name="term2" class="term">
+        </label>
+    </div>
+    <div>
+        <label>
+            개인 정보 이용약관 동의
+            <input type="checkbox" name="term3" class="term">
+        </label>
+    </div>
+  </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // const $button = $("button");
+  // console.log($button)
+
+  // 버튼을 클릭하는 이벤트 작성
+  // on() = addEventListener()라고 생각해도 됨
+
+  // .css() : css의 속성값을 변경하고 싶은 경우
+  // .prop() : js의 프로퍼티를 변경하고 싶은 경우
+
+  /* $button.on("click", () => {
+    $(".box").css("display", "none");
+  }) */
+  
+  const $all = $(".all");
+  const $terms = $(".term");
+  
+  $all.on("click", (e) => {
+    $terms.prop("checked", e.target.checked);
+  })
+
+  $terms.on("click", (e) => {
+    $all.prop("checked", $terms.filter(":checked").length === 3);
+  })
+
+
+</script>
+</html>

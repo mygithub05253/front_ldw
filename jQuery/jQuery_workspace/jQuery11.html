@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 최종 실습 solution</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <table border="1">
+    <caption>요금표</caption>
+    <thead>
+      <tr>
+        <th>구분</th>
+        <th>요금</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>아동</td>
+        <td>무료</td>
+      </tr>
+      <tr>
+        <td>청소년</td>
+        <td>2000</td>
+      </tr>
+      <tr>
+        <td>성인</td>
+        <td>5000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <fieldset>
+    <legend>구분</legend>
+    <input id="input" type="text" placeholder="구분을 입력해주세요." />
+    <button onclick="confirm()">확인</button>
+  </fieldset>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // 값들을 저장하기 위한 전역 변수 선언
+  globalThis.$temp;
+
+  // input이랑 테이블의 td 가져오기
+  const $input = $("#input");
+  const $tds = $("tbody tr td:first-child");
+
+  // 값이 같은지 확인하기 위한 플래그 선언
+  let flag = false;
+
+  function confirm() {
+
+    // 값들을 원상 복구 시키는 코드
+    if(globalThis.$temp) {
+      globalThis.$temp.closest("tr").css("background-color", "white");
+      globalThis.$temp.text(globalThis.$temp.text().replaceAll("⭐", ""));
+    }
+
+    // 글자 앞에 별을 붙이고 색깔을 바꾸도록 하는 코드
+    $tds.each((i, td) => {
+      const $td = $(td);
+      if($td.text() === $input.val()) {
+        flag = true;
+        $td.text("⭐" + $td.text());
+        globalThis.$temp = $td;
+        $td.closest("tr").css("background-color", "#ef5350");
+      }
+    })
+
+    if(!flag) {
+      alert("다시 입력하기")
+    }
+
+    $input.val("");
+  }
+
+
+</script>
+</html>

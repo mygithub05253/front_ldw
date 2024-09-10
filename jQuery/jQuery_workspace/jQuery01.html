@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 기초</title>
+</head>
+<body>
+
+  <div><input type="text" class="number" value="1" /></div>
+  <div><input type="text" class="number" value="2" /></div>
+  <div><input type="text" class="number" value="3" /></div>
+
+  <div>
+    <button onclick="changeJS()">변경(JS)</button>
+    <button onclick="changejQ()">변경(jQuery)</button>
+  </div>
+
+</body>
+<!-- jQuery를 사용하기 위해서 가져와야 하는 코드 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // JS 활용
+  // input 태그 전부 가져오는 코드
+  const inputs = document.querySelectorAll('.number');
+
+  // 변경(JS) 버튼을 눌렀을 때 input 태그들의 border 색상이 빨간색으로 변경되도록 하는 함수
+  function changeJS() {
+    // 버튼을 눌렀을 때 input 태그들의 border 색상을 전부 빨간색으로 변경하는 코드
+    inputs.forEach((input) => {
+      input.style.borderColor ='red';
+    });
+  }
+
+  // jQ 활용
+  const $inputs = $(".number");
+  console.log($inputs)
+  function changejQ() {
+    $inputs.css("border-color", "blue");
+  }
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery input 타입 변경</title>
+  <style>
+    form {
+      display: flex;
+      align-items: center;
+      border: 1px solid black;
+      width: 200px;
+    }
+
+    input {
+      outline: none;
+      border: none;
+    }
+
+    div.mark {
+      width: 24px;
+      height: 24px;
+      background-image: url("./images/close.png");
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <label>
+      <input name="password" type="password" placeholder="비밀번호를 입력하세요." maxlength="20">
+    </label>
+    <div class="mark"></div>
+  </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // input, mark 가져오기
+  const $input = $("input[name='password']");
+  const $mark = $(".mark");
+
+  // 제대로 가져왔는지 확인하기
+  console.log($input)
+  console.log($mark)
+
+  // 이미지를 클릭했을 때 이벤트 발생시키기
+  $mark.on("click", (e) => {
+    // type이 password인지 검사하기
+    const check = $input.attr("type") == 'password';
+    $input.attr("type", check ? "text" : "password");
+    $(e.target).css("background-image",`url(${check ? "./images/open.png" : "./images/close.png"})`);
+  })
+</script>
+</html>
