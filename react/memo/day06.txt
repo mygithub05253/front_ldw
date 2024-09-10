@@ -1,0 +1,57 @@
+useMemo를 배우는 이유
+- 함수형 컴포넌트에서 다른 변화 때문에 연산이 되는 불필요한 연산을 하지 않도록 방지하기 위함
+
+useMemo란?
+- 메모리에 있는 캐시를 사용하는 훅함수
+- 캐시에 있는 것을 쓴다는 것은 최초에 마운트할 때 연산 결과를 캐시에 담아 놓고 리랜더링이 있을 때 캐시와 결과를 비교하여 원하는 값의 변화를 줄 때만 연산 수행 가능
+=> 위와 같은 작업을 memoization이라 함
+- 하지만 useMemo를 많이 사용하게 되면 메모리 캐시에 다 저장하게 되므로 메모리의 낭비를 발생시킬 수 있으므로 사용해야 하는 때가 정해져 있음
+
+============================================================================================================
+통상적은 프로젝트 파일 생성 방법 및 구조
+
+React 프로젝트 파일 생성
+yarn create react-app custom
+
+확장 기능 설치
+vscode-styled-components
+
+styled-reset 명령어
+yarn add styled-reset
+
+styled-components 명령어
+1) yarn add styled-components
+2) yarn add styled-reset
+3) yarn add @fortawesome/free-solid-svg-icons
+4) yarn add @fortawesome/react-fontawesome
+
+custom hook 패턴 구조 // 참조 => src 폴더 내부에 생성하기
+[components] : 반복되는 것들을 하나의 hook 함수로 생성 용도
+
+[utils]
+- arrayheler.js
+- parseheler.js
+
+[consts]
+- key.js (상수, 문자열)
+
+[styles]
+- theme.js : 정해져 있는 사이트의 테마 컬러 및 스타일 존재
+- globalStyle.js : font 스타일, 스타일 리셋(초기값) 등... 존재
+- common.js : 중첨되는 css 스타일 속성들을 넣어놓는 곳
+...
+
+[pages]
+   [Home]
+      [Hooks]
+      [Components]
+      -home.js
+
+[routes]
+
+[hooks]
+... etc
+
+
+============================================================================================================
+

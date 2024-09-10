@@ -1,0 +1,37 @@
+Redux
+- 전역 상태 관리
+- 상태 관리 라이브러리이며, React뿐만 아니라 모든 JS 코드에서 동작
+- Flux 패턴을 기반으로 생성되었기 때문에 단방향으로 동작하며 흐름을 파악하기 쉽고 예측 가능
+- redux, react-redux, redux-actions, @redux-devtools/extension 설치
+
+Redux 패턴
+- Flux와는 다르게 하나의 App에 하나의 Store가 존재하고, Flux 패턴을 좀 더 쉽게 사용할 수 있는 라이브러리
+- Component -> Action -> Reducer(Dispatcher) -> Store -> State -> Component
+
+1) 컴포넌트(Component)
+- Action이 발생
+- 나중에 변경된 State를 반영하기 위해 Store가 Subscribe(구독)을 해 놓음
+
+2) 액션(Action)
+- 변화가 필요할 때 발생하는 신호
+- Dispatch()로 감싸서 Reducer로 전달됨
+- Action에는 구분점(Type)을 필수로 담고 필요한 데이터가 있으면 parameter로 같이 담김
+- 이후에 Reducer에 전달되기 전에 Store를 가져와서 Action과 함께 Reducer에 전달됨
+
+3) 리듀서(Reducer)
+- 전달받은 Action에서 Type을 가져온 뒤 구분하여 State를 변경하는 등 알맞은 로직(함수)가 실행되는 순수 함수
+
+4) 스토어(Store)
+- State를 저장하는 저장소이며, subscribe 해놓은 Component로 가서 변경된 State 값을 전달해줌
+
+Redux의 원칙
+- 1개의 App에는 1개의 Store만 존재해야 함
+- State는 불변성을 가져야 함
+- Reducer는 반드시 순수 함수로 만들어져야 함
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Routing
+- 클라이언트가 요청한 URL을 분석하여 알맞는 페이지로 응답하는 것
+- 여러 페이지로 구성된 웹 애플리케이션을 만들 때 사용
+- react-router-dom 설치

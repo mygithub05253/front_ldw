@@ -1,0 +1,7 @@
+Flux 패턴 (단방향 패턴)
+- View -> Action -> Dispatcher -> Store -> View
+
+1) Action : 클릭을 하거나, 이벤트가 발생했을 때 타입을 전송
+2) Dispatcher : action에서 발생한 타입을 분류하여 알맞는 로직이 실행되도록 함
+3) Store : 이전 값과 상태 변화 값을 확인한 후 state의 변화를 저장하는 곳
+4) View : 상태 변화가 된 것을 리랜더링 시킴
