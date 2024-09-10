@@ -1,0 +1,19 @@
+client React 라이브러리 설치
+
+yarn create react-app [폴더명]
+
+// 라우팅
+yarn add react-router-dom
+
+// 리덕스
+yarn add redux react-redux @redux-devtools/extension redux-actions
+
+// 스타일
+yarn add @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome styled-components styled-reset
+
+// 로그인
+yarn add react-hook-form
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+server, Node, Express 라이브러리 설치
