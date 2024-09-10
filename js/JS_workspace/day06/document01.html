@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클래스 이름을 이용한 선택</title>
+</head>
+<body>
+  <div>
+    <h1>클래스 이름을 이용한 선택</h1>
+    <ul>
+      <li class="odd item">1번째 아이템이에요!</li>
+      <li class="even item">2번째 아이템이에요!</li>
+      <li class="odd item">3번째 아이템이에요!</li>
+      <li class="even item">4번째 아이템이에요!</li>
+      <li class="odd item">5번째 아이템이에요!</li>
+    </ul>
+  </div>
+</body>
+<script>
+
+  // 프로토타입
+  // 같은 변수 값 또는 메서드를 상속시켜주고 싶을 때 사용하는 것이 prototype
+  HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+  const items = document.getElementsByClassName("item");
+  console.log(items);
+  // 짝수는 녹색, 홀수는 핑크색
+  const colors = {
+    "even" : "green",
+    "odd" : "pink"
+  };
+
+  items.forEach((item) => {
+    item.style.color = colors[item.classList[0]];
+  });
+
+</script>
+</html>

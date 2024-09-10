@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스 동의</title>
+</head>
+<body>
+  <form action="" name="myForm">
+    <div>
+      <label>
+        전채 동의
+        <input type="checkbox" name="all" class="all">
+      </label>
+    </div>
+    <div>
+      <label>
+        서비스 이용약관 동의
+        <input type="checkbox" name="term1" class="term">
+      </label>
+    </div>
+    <div>
+      <label>
+        광고 수신 동의
+        <input type="checkbox" name="term2" class="term">
+      </label>
+    </div>
+    <div>
+      <label>
+        개인 정보 이용약관 동의
+        <input type="checkbox" name="term3" class="term">
+      </label>
+    </div>
+  </form>
+</body>
+<script>
+  // 전체 동의 버튼을 누르면 나머지 체크 박스를 모두 동의하도록 만들기
+  // 전체 동의 버튼이 해제되면 나버지 체크 박스를 모두 해제하도록 만들기
+  const all = document.querySelector("input.all");
+  const terms = document.querySelectorAll("input.term");
+
+  NodeList.prototype.filter = Array.prototype.filter;
+  NodeList.prototype.map = Array.prototype.map;
+  
+  all.addEventListener("click", (e) => {
+    /* terms[0].checked = true;
+    terms[1].checked = true;
+    terms[2].checked = true; */
+    const checked = e.target.checked;
+    /* if(checked) {
+      terms.forEach((term) => {
+        term.checked = true;
+    })
+    } else {
+      terms.forEach((term) => {
+        term.checked = false;
+    })
+    } */
+
+    terms.forEach((term) => {
+      term.checked = all.checked;
+    })
+  })
+
+  terms.forEach((term) => {
+    term.addEventListener("click", (e) => {
+      all.checked = terms.map((term) => term.checked).filter((checked) => checked).length === 3;
+    })
+  })
+</script>
+</html>

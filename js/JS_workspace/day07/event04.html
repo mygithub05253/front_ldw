@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>키 이벤트</title>
+</head>
+<body>
+  <input type="text" name="name" placeholder="이름을 입력하세요!" />
+  <p id="name"></p>
+</body>
+<script>
+  // 키보드를 누르고 땠을 때 이벤트를 발생시켜서
+  // p 태그 안에 이름을 출력
+  const input = document.querySelector("input[name='name']");
+  const p = document.querySelector("#name");
+
+  input.addEventListener("keyup", (e) => {
+    // p.innerText = input.value;
+    p.innerText = e.target.value;
+  })
+</script>
+</html>

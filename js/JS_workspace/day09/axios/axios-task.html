@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>axios 실습</title>
+</head>
+<body>
+  <ul class="wrapper">
+      <!-- 유저의 name, 주소 street, 회사의 name -->
+      <!-- 10개만 가져오기 -->
+  </ul>
+</body>
+<script>
+  /* 
+  const result = axios.get("https://jsonplaceholder.typicode.com/users");
+  const posts = result.json(); 
+  const users = posts.map((posts) => posts.username); // username 가져오기
+  const companies = posts.map((posts) => posts.company); // company 가져오기
+  const addresses = posts.map((posts) => posts.address); // address 가져오기
+  const streets = addresses.map((addresses) => addresses.street); // address 내부의 street 가져오기
+  const usernames = users.slice(0, 10); // username 10개만 가져오기
+  const getStreet = streets.slice(0, 10); // street 10개만 가져오기
+  const companyNames = companies.map((companies) => companies.name); // company 내부의 name 가져오기
+  const getCompanyName = companyNames.slice(0, 10) // company name 10개만 가져오기
+  */
+  const wrapper = document.querySelector(".wrapper");
+  const getUsers = async () => {
+    const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+    return response.data;
+  }
+
+  getUsers()
+    .then((users) => {
+      return users.map((user) => {
+        const users = {
+          userName : user.name,
+          userAddress : user.address.street,
+          userCompany : user.company.name
+        }
+        return users
+      })
+    })
+    .then((users) => {
+      users.forEach((user) => {
+        wrapper.innerHTML += `<li>
+            <p>${users.userName}</p>
+            <p>${users.userAddress}</p>
+            <p>${users.userCompany}</p>
+          </li>`;
+        // <li></li>
+        // user.userName
+        // user.userAddress
+        // user.userCompany
+      })
+    })
+    .catch(console.error)
+  
+</script>
+</html>

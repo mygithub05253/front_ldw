@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자를 이용한 선택</title>
+</head>
+<body>
+  <h1>CSS를 이용한 선택</h1>
+  <p id="p-tag">첫 번째 단락이에요!</p>
+  <ul>
+    <li class="odd">치킨</li>
+    <li class="even">집</li>
+    <li class="odd">자동차</li>
+    <li class="even">여자친구</li>
+    <li class="odd">남자친구</li>
+  </ul>
+</body>
+<script>
+  const p = document.querySelector('#p-tag');
+  const list = document.querySelectorAll('li');
+
+  const fontSizes = {
+    "odd" : "22px",
+    "even" : "14px"
+  }
+
+  // 홀수의 글자 크기는 22px로, 짝수의 글자 크기는 14px로 변경
+  list.forEach((li) => {
+    li.style.fontSize = fontSizes[li.className];
+  })
+
+  // p 태그의 text
+  // innnerHTML, innerText
+  // p.innerHTML = "<h1>와 신기하네! 바뀌네</h1>";
+  p.innerText = "<h1>와 신기하네! 바뀌네</h1>";
+
+  // 전체 목록 중에 "친구"가 포함(includes() 활용)되어 있다면 글자색을 빨간색으로 변경하기
+  // 코드 작성할 때 규칙
+  // 1) 알고리즘을 짠다
+  // 2) 결과 중간 코드를 확인
+  // 3) 코드에 애정을 갖지 않기
+
+  // 1) 알고리즘
+  // 1. 가져온다
+  // 2. 콘솔에 확인한다
+  // 3. 반복문 돌린다.
+  // 4. li마다 includes()로 확인
+  // 5. 글자색을 빨간색으로 변경
+  // 6. 결과 확인
+
+/*   list.forEach((li) => {
+    if(li.innerText.includes("친구")) {
+      li.style.color = "red";
+    }
+  }) */
+
+  NodeList.prototype.filter = Array.prototype.filter;
+  list.filter((li) => li.innerText.includes("친구")).forEach((li) => {
+    li.style.color = "red";
+  })
+
+</script>
+</html>

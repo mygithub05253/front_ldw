@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스</title>
+</head>
+<body>
+  <div>
+    
+    <label><input type="checkbox" value="선택2">선택2</label>
+    <label><input type="checkbox" value="선택3">선택3</label>
+    <label><input type="checkbox" value="선택1">선택1</label>
+    <p id="result"></p>
+  </div>
+</body>
+<script>
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  const result = document.querySelector("#result");
+  /*
+    checkboxes.addEventListener("click", () => {
+    console.log("클릭");
+  }) */
+
+  // querySelectorAll 리턴 타입은 NodeList 타입
+  // filter()가 구현되어 있지 않아서, Array 객체에 구현된 filter로 만들어줌
+  // prototype을 사용하여 선언하면 모든 해당 프로토타입 객체들에게 반영 가능
+  NodeList.prototype.filter = Array.prototype.filter;
+  /* checkboxes.filter((check, i) => {
+    console.log(check);
+  }) */
+  
+  // 실습
+  // 체크 박스를 클릭하면 result p 태그 안에 strong 태그로 넣어주기
+  // addEventListener는 하나의 객체에만 사용 가능
+  /* checkboxes.forEach((check) => {
+    // check는 하나의 checkbox 객체
+    check.addEventListener("click", (e) => {
+      const target = e.target;
+      result.innerText = target.value;
+    })
+  }) */
+  
+  // 실버
+  // 태그 안에 문자열 값으로 붙여넣기 선택1선택2선택3
+  /* checkboxes.forEach((check) => {
+    // check는 하나의 checkbox 객체
+    check.addEventListener("click", (e) => {
+      const target = e.target;
+      result.innerText += target.value;
+    })
+  }) */
+  
+  // 플레티넘
+  // createElement("string");
+  // appendChile(), removeChild();
+  checkboxes.forEach((check) => {
+    // check는 하나의 checkbox 객체
+    check.addEventListener("click", (e) => {
+      const target = e.target;
+      // p.innerText += target.value;
+      if(target.checked) {
+        // p 태그 안에 strong 태그 넣어주기
+        const strong = document.createElement("strong");
+        strong.innerText = target.value;
+        strong.style.marginRight = "8px";
+        result.appendChild(strong);
+      } else {
+        // 클릭한 체크박스의 상태가 해제되었다면
+        // 모든 strong 태그들을 다 가져와서
+        const strongs = document.querySelectorAll("#result strong");
+        // 삭제 대상을 filter로 걸러낸 뒤 리턴 타입이 배열이기 때문에
+        // 해당 방 번호의 [0] 즉, 첫 번째 인덱스 값의 값을 전달
+        const target = strongs.filter((strong) => strong.innerText == e.target.value)[0];
+        result.removeChild(target);
+      }
+    })
+  })
+
+</script>
+</html>

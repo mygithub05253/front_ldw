@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prompt 실습</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 사용자에게 과일 이름을 받아서 (prompt)
+  // naver로 이동시켜주는 태그로 출력하기
+  // ex) <a href=''>과일명</a>
+
+  const name = prompt("과일 이름을 입력하세요");
+  const locationNaver = "https://www.naver.com/";
+  // 17번째 줄 오류
+  // document.write(<a href="https://naver.com"'${name}'<a/>);
+  const tegA = `<a href="https://www.naver.com">${name}<a/>`;
+  document.write(tegA);
+</script>
+</html>

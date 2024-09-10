@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>첨부파일 썸네일</title>
+  <style>
+    div.wrap {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    div.image {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <div class="wrap">
+      <label for="">
+        <div class="image"></div>
+      </label>
+      <div class="cancel"></div>
+    </div>
+    <input type="file" id="attach">
+  </form>
+</body>
+<script>
+  const input = document.getElementById("attach");
+  const thumbnail = document.querySelector("div.image");
+
+  input.addEventListener("change", (e) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = (e) => {
+      console.log(e);
+      thumbnail.style.backgroundImage = `url(${e.target.result})`
+    }
+    
+  })
+</script>
+</html>

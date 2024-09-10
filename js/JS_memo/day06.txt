@@ -1,0 +1,17 @@
+DOM API란?
+- HTML 태그들을 하나씩 객체화한 것
+- HTML 페이지의 내용과 모양을 제어하기 위해 사용되는 객체
+- HTML 태그 당 DOM 객체가 하나씩 생성
+- HTML 태그의 포함 관계에 따라서 부모, 자식, 형제자매 관계로 구성
+
+API(Application Programming Interface)란?
+- 응용 프로그램 사이에서 동선에 사용된 언어와 메시지를 의미
+- API를 자원별로 구분한 것이 REST API
+
+DOM selector
+- document.getElementById("") : 단일 객체를 반환, HttpCollection
+- document.getElementsByClassName("") : HttpCollection
+- document.getElementsByTagName("") : HttpCollection
+- document.getElementByName("") : 유사 배열 객체를 반환, NodeList
+- document.querySelector("") : NodeList
+- document.querySelectorAll("") : NodeList
