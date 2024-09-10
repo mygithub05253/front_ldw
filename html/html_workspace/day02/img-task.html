@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a태그 실습</title>
+  <style>
+    div {
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    현재 폴더를 기준으로 이미지 5개를 불러오고
+    a태그를 이용해서 4번 이미지로 이동시키기
+  -->
+
+  <a href="https://www.google.co.kr" target="_blank">구글로 새 탭으로 이동</a>
+  <a href="#icon4">4번 이미지로 북마크 이동</a>
+
+  <div><img src="/day02/images/icon01.png" alt="1번 이미지"></div>
+  <div><img src="/day02/images/img03/img05/icon02.png" alt="2번 이미지"></div>
+  <div><img src="/day02/images/img01/img04/icon03.png" alt="3번 이미지"></div>
+  <div><img id="icon4" src="/day02/images/img02/icon04.png" alt="4번 이미지"></div>
+  <div><img src="/day02/images/img01/icon05.png" alt="5번 이미지"></div>
+</body>
+</html>
