@@ -6,22 +6,7 @@ import S from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviousUrl } from '../../modules/user';
 
-const Layout = () => {
-
-  // 비로그인 회원이 마이 페이지 접근을 제한시켜야 함
-  const location = useLocation();
-  const dispatch = useDispatch();
-
-  const previousUrl = useSelector((state) => state.user.previousUrl);
-
-  const path = location.pathname + location.search;
-
-  if(path !== "/my") {
-    dispatch(setPreviousUrl(path))
-    console.log("리덕스 이전 경로", previousUrl)
-    console.log("현재 경로", path)
-  }
-
+const AdminLayout = () => {
 
   return (
     <S.Background>
@@ -56,4 +41,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default AdminLayout;

@@ -65,6 +65,7 @@ const Input = styled.input`
     ${({size}) => sizeCSS[size]}
     ${({color}) => colorCSS[color]}
 
+    padding: 0 16px;
     border: none;
 `
 

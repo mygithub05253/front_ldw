@@ -6,6 +6,7 @@ import TodoContainer from "../pages/todo/TodoContainer";
 import SignIn from "../pages/signIn/SignIn";
 import SignUp from "../pages/signUp/SignUp";
 import MyPage from "../pages/myPage/MyPage";
+import AdminLayout from "../pages/layout/AdminLayout";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,13 @@ const router = createBrowserRouter([
   },
   {
     path : "/my",
-    element : <MyPage />
+    element : <AdminLayout />,
+    children : [
+      {
+        path : "/my",
+        element : <MyPage />
+      }
+    ]
   },
   {
     path : "*",
