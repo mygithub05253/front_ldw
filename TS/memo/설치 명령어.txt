@@ -1,0 +1,26 @@
+typescript 설치 명령어
+1. yarn add global typescript
+2. yarn add typescript --dev
+3. yarn add tslint -- dev
+4. yarn add tslint-config-airbnb
+5. yarn add global ts-node @types/node : 타입들을 정의해놓은 파일
+
+* typesciprt 설치 시도했는데 node_modules 안나오는 경우
+1. npx tsc --init
+2. basic.ts 생성
+3. npx tsc -w로 basic.js 생성되는 지 확인
+
+* 설치 완료 후
+- npx tslint --init 입력해서 tslint.json 생성 확인
+- tslint.json 수정
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-airbnb"    
+    ],
+    "jsRules": {},
+    "rules": {},
+    "rulesDirectory": []
+}
+- npx tsc basic.ts : 컴파일을 한 번 수행한 뒤 basic.js에 똑같은 코드가 복사됨
+- npx tsc -w : nodemon과 동일한 기능 수행
