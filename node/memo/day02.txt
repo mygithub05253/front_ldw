@@ -1,0 +1,30 @@
+k6로 수집할 수 있는 항목들
+
+1. 항상 수집하는 항목
+이름(Matric Name)  타입(type)  설명(Description) 
+  - vus  Gauge  현재 활성화된 사용자 유저 
+  - vus_max  Gauge  가능한 최대 가상 사용자 수  
+  - 로드 레벨을 확장할 때 성능에 미치지 않도록 VU 리소스가 미리 할당됨 
+  - interations  Counter  *테스트에서 Vu가 JS 스크립트를 실행한 총 횟수 
+  - interations_duration  Trend  defalut , main function의 전체 반복을 한 번 완료하는 데 소요된 시간 
+  - data_recevied  Counter  데이터를 전달받은 양 
+  - data_sent  Counter  데이터를 전달한 양 
+
+2. http와 관련된 항목
+ 이름(Matric Name)  타입(type)  설명(Description) 
+  - http_reqs  Counter  총 얼마나 많은 HTTP request를 k6에서 생성했는지 
+  - http_req_blocked  Trend  요청을 시작하기 전에 차단된 시간
+  * TCP connetion slot : 즉 기다리는 시간
+  - http_req_connection  Trend  원격 호스트에 대한 TCP 연결을 설정하는데 소요한 시간 
+  - http_req_tls_handshaking  Trend  원격 호스트와의 핸드셰이킹 TLS 세션에 소요된 시간
+  * 두 호스트가 서로 연결할 때에 필요한 정보들을 주고받는 일련의 과정 
+  - http_req_waiting  Trend  원격 호스트로부터 응답을 대기하는데 소요된 시간 
+  - http_req_receiving  Trend  원격 호스트로부터 응답 데이터를 수신하는데 소요된 시간 
+  - http_req_duration  Trend  요청의 총 시간
+  - req_sending+req_waiting+req_receiving 
+  - http_req_failed  Rate  실패한 요청 
+-------------------------------------------------------------------------------------------------------------------
+라우터란?
+- 라우터는 클라이언트 요청 경로(path)를 보고 이 요청을 처리할 수 있는 곳으로 기능을 전달해주는 역할
+- 애플리케이션 엔드 포인트(URI)의 정의 그리고 URI가 클라이언트 요청에 응답해주는 방식
+- 예를 들어, 클라이언트가 /users 경로로 요청을 보낸다면 이에 대한 응답 처리를 하는 함수를 별도로 분리해서 만든 다음 get() 메서드를 호출하여 라우터로 등록 가능

@@ -1,0 +1,104 @@
+Node.js란?
+- 기본적으로 서버 프로그램
+- 자바스크립트 백엔드 환경의 핵심 JS를 브라우저가 아닌 로컬에서도 실행시켜줄 수 있는 실행창
+- 구글이 개발한 V8 엔진을 사용하여 JavaScript 코드를 실행할 때 실시간으로 컴파일이 가능하고 성능이 좋음
+- 요청을 처리하는 이벤트 루프는 단일 스레드이고 단일 스레드인 Node.js로 비동기 통신이 가능한 이유는 libuv(리버브) 라이브러리 때문
+- libuv는 내부적을 기본 4개의 스레드(trhead)를 가지고 있고, Node.js의 단일 스레드가 libuv의 여러 스레드를 백그라운드에서 사용하여 비동기 코드를 실행시킴
+- 크롬의 V8 엔진과 libuv라는 라이브러리가 결합된 결과물이 Node.js
+
+npm과 npx 명령어
+- npm(Node Package Manager)은 패키지를 설치하고 관리해주는 매니저
+- 패키지를 한 번에 하나씩 순차적으로 설치
+- npx(Node Package eXecute)은 패키지를 실행하는 명령어
+
+yarn 명령
+- 패키지를 설치하고 관리
+- yarn은 여러 패키지를 동시에 가져온 뒤 설치
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Chocolately란?
+- 윈도우 소프트웨어를 위한 머신 수준의 명령 줄 패키지 관리자이자 인스톨러
+- 설치하려는 윈도우용 소프트웨어를 일일이 웹 사이트에서 찾아서 설치할 필요 없이 간단하게 command 만으로 윈도우용 소프트웨어를 설치할 수 있게 해줌
+- 패키지 매니저로서 choco 명령어를 통해서 JS 환경을 좀 더 쉽게 설정할 수 있게 해줌
+- 넷플릭스, 우버, 나사, 네이버 등에서 사용
+- 맥OS는 homebrew 사용
+- powershell 관리자 모두에 아래 코드 입력
+> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+- choco -v
+
+K6
+- Grafana에서 만든 오픈소스 부하 테스트 도구
+- 요청과 응답 사이의 시간이 짧아졌는지, 또한 이용자가 많이 몰리는 특수한 상황에서 서버가 얼마나 잘 대처하여 오류를 최소화하는지 파악하기 위해 사용
+- 그 외에도 JMeter 등의 여러 가지 라이브러리들 존재
+- https://dl.k6.io/msi/
+- choco install k6
+
+nodemon
+- nodemon은 노드 서버를 키고 코드를 수정하거나 업데이트했을 때, 서버를 내리고 다시 켜야 반영이 됨
+- 이러한 번거로운 작업들을 nodemon을 일일이 할 필요 없이 변경점을 감지해주고 반영시켜주는 기능 존재
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+http 모듈
+- http 웹 서버와 관련된 모든 기능을 담고 있는 모듈
+
+server 객체
+- 웹 서버를 생성할 때 사용하는 객체
+
+server 객체의 메서드
+- listen(port, callback) : 서버를 첫 번째 매개 변수의 포트로 실행, 실행 이후 사용할 로직
+- close(callback) : 서버를 종료
+
+server 객체 이벤트
+1. request
+- 클라이언트가 요청할 때 발생하는 이벤트
+
+2. connection
+- 클라이언트가 접속할 때 발생하는 이벤트
+
+3. close
+- 서버가 종료될 때 발생하는 이벤트
+
+4. checkContinue
+- 클라이언트가 지속적인 연결을 하고 있을 때 발생하는 이벤트
+
+5. upgrade
+- 클라이언트가 http 업그레이드를 요청할 때 발생하는 이벤트
+
+6. clientError
+- 클라이언트에서 오류가 발생할 때 발생하는 이벤트
+
+request 객체
+- 응답 메시지를 작성할 때 request 이벤트 리스너의 첫 번째 매개 변수로 전달되는 객체
+- 서버로 요청하는 객체의 정보를 포함
+
+response 객체
+- 응답 메시지를 작성할 때 request 이벤트 리스너의 두 번째 매개 변수로 전달되는 객체
+1. res.send()
+- send에 전해진 argument에 따라서 Content-Type이 자동적으로 생성됨
+
+2. res.json()
+- json이 아닌 것도 json으로 바꾸어서 전송
+- 즉, Content-Type 헤더를 application/json으로 고정
+- res.json()도 마지막에 res.send() 호출
+
+3. res.end()
+- 보내줄 데이터가 아무 것도 없을 때 response를 끝내고 싶을 때 사용
+--------------------------------------------------------------------------------------------------------------------------------
+curl(command line tool and library for transferring data with URLs)이란?
+- curl은 client URL의 약자로 서버와 통신할 수 있는 명령어 툴
+- 즉, 우리가 URL을 가지고 할 수 있는 것들은 모두 할 수 있게 도와줌
+- 지원하는 프로토콜들을 이용해 서버에 데이터를 보내거나 가져올 때 사용하는 도구
+- 예를 들면 http 프로토콜을 이용해 웹 페이지의 소스를 가져온다거나 파일 다운 가능
+- ftp 프로토콜을 이용해서는 파일을 받을 수 있을 뿐만 아니라 올리는 것 가능
+- 심지어 SMTP 프로토콜을 이용하면 메일 전송 가능
+
+curl 설치
+- https://curl.se/windows/
+
+설치 후 환경 변수 설정
+- curl http://localhost:8000
+- curl http://localhost:8000 -UseBasicParsing
+
+맥 OS 설치 방법
+- brew install curl

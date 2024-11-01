@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REST API 응답 페이지</title>
+</head>
+<body>
+  <table id="result">
+    <th>상품번호</th>
+    <th>상품명</th>
+    <th>상품가격</th>
+    <th>브랜드</th>
+  </table>
+</body>
+<script>
+  // table 안에 product의 정보를 화면에 뿌리기
+  // const result = document.getElementById("result");
+  const table = document.querySelector("table");
+
+  fetch("http://localhost:8000/api/product/3")
+  .then((response) => response.json())
+  .then((product) => {
+    // result.innerHTML = `
+    //   <tr>
+    //     <td>${product.number}</td>
+    //     <td>${product.name}</td>
+    //     <td>${product.price}</td>
+    //     <td>${product.brand}</td>
+    //   </tr>  
+    // `
+    table.innerHTML += (
+      `<tr>
+        <td>${product.number}</td>
+        <td>${product.name}</td>
+        <td>${product.price}</td>
+        <td>${product.brand}</td>
+      </tr>`
+    )
+  })
+  .catch(console.error)
+</script>
+</html>
